@@ -12,7 +12,7 @@ class LoadImage extends StatelessWidget {
     this.height,
     this.fit: BoxFit.cover, 
     this.format: 'png',
-    this.holderImg: 'none'
+    this.holderImg: 'page_empty'
   }): super(key: key);
   
   final String image;

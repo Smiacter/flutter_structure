@@ -1,9 +1,8 @@
-import 'package:esite/base/config/app_config.dart';
-import 'package:esite/base/widget/toast.dart';
 import 'package:flutter/material.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
-
 import 'base_list_model.dart';
+import '../../config/app_config.dart';
+import '../../widget/hud.dart';
 
 /// 带下拉刷新&上拉加载更多的列表ViewModel基类
 /// 
@@ -52,7 +51,7 @@ abstract class BaseRefreshListModel<T> extends BaseListModel<T> {
         list.clear();
         setError(e, s);
       } else {
-        Toast.show(e.toString());
+        Hud.showToast(text: e.toString());
       }
       return null;
     }

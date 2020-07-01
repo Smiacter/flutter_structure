@@ -23,8 +23,6 @@ class _TabNavigatorState extends State<TabContainer> {
   List<String> _tabTitles = [];
   List<List<Widget>> _tabImages = [];
   List<List<Widget>> _tabDarkImages = [];
-  List<BottomNavigationBarItem> _tabItems;
-  List<BottomNavigationBarItem> _tabDarkItems;
   int _selectedIndex = 0;
 
   @override

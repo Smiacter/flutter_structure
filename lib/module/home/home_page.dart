@@ -1,12 +1,9 @@
-import 'package:esite/base/config/net_api.dart';
-import 'package:esite/base/network/net.dart';
 import 'package:esite/base/structure/mvvm/base_widget.dart';
-import 'package:esite/base/structure/mvvm/view_state.dart';
 import 'package:esite/base/structure/mvvm/view_state_widget.dart';
+import 'package:esite/base/widget/action_sheet.dart';
 import 'package:esite/base/widget/load_image.dart';
 import 'package:esite/common/select_province.dart';
 import 'package:esite/module/home/home_banner_model.dart';
-import 'package:esite/module/home/model/home_banner_entity.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -68,11 +65,30 @@ class HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin {
     return ListView.builder(
       itemCount: model.banners.length,
       itemBuilder: (context, index) {
-        return Container( 
-          margin: EdgeInsets.symmetric(horizontal: 15),
-          width: double.infinity,
-          height: 200,
-          child: LoadImage(model.banners[index].imagePath),
+        return InkWell(  
+          child: Container( 
+            margin: EdgeInsets.symmetric(horizontal: 15),
+            width: double.infinity,
+            height: 200,
+            child: LoadImage(model.banners[index].imagePath),
+          ),
+          onTap: () => ActionSheet.show(context: context, type: ActionSheetType.flat, actions: [
+            CupertinoActionSheetAction( 
+              child: Text("拍照"),
+              onPressed: () {
+                Navigator.pop(context, "take photo");
+              } ,
+            ),
+            CupertinoActionSheetAction( 
+              child: Text("从手机相册选择"),
+              onPressed: () {
+                Navigator.pop(context, "choose photo");
+              },
+            ),
+          ], cancelButton: CupertinoActionSheetAction( 
+            child: Text("取消", style: TextStyle(color: Colors.red)),
+            onPressed: () => Navigator.pop(context, "cancel"),
+          ), title: Text("我是标题-ActionSheet测试", style: TextStyle(color: Colors.black),)),
         );
       },
     );

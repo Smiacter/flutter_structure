@@ -1,7 +1,6 @@
 import 'package:esite/base/appearance/app_bar.dart';
 import 'package:esite/base/structure/mvvm/base_widget.dart';
 import 'package:esite/base/structure/mvvm/view_state_widget.dart';
-import 'package:esite/base/widget/default_skeleton_item.dart';
 import 'package:esite/base/widget/skeleton.dart';
 import 'package:esite/module/nav/model/article_entity.dart';
 import 'package:esite/module/nav/nav_list_model.dart';
@@ -9,9 +8,14 @@ import 'package:flutter/material.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 /// tab - 导航
-class NavPage extends StatelessWidget {
+class NavPage extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() => _NavPageState();
+}
+class _NavPageState extends State<NavPage> with AutomaticKeepAliveClientMixin {
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return Scaffold( 
       appBar: MyAppBar(
         isBack: false,
@@ -59,4 +63,7 @@ class NavPage extends StatelessWidget {
       ),
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }

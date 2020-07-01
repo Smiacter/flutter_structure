@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'toast.dart';
+import 'hud.dart';
 
 class DoubleTapBackExit extends StatefulWidget {
   const DoubleTapBackExit({
@@ -32,10 +32,10 @@ class _DoubleTapBackExitAppState extends State<DoubleTapBackExit> {
     if (_lastTime == null ||
         DateTime.now().difference(_lastTime) > widget.duration) {
       _lastTime = DateTime.now();
-      Toast.show('再次点击退出应用');
+      Hud.showToast(text: '再次点击退出应用');
       return Future.value(false);
     }
-    Toast.cancelToast();
+    Hud.cancelToast();
     return Future.value(true);
   }
 }
