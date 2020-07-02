@@ -1,5 +1,3 @@
-import 'package:esite/base/widget/double_tap_back_exit.dart';
-import 'package:esite/base/widget/load_image.dart';
 import 'package:esite/module/gas/gas_page.dart';
 import 'package:esite/module/home/home_page.dart';
 import 'package:esite/module/mine/mine_page.dart';
@@ -9,6 +7,8 @@ import 'package:flutter/material.dart';
 import '../../appearance/app_color.dart';
 import '../../appearance/dimens.dart';
 import '../../appearance/theme_util.dart';
+import '../../widget/y_image.dart';
+import '../../widget/double_tap_back_exit.dart';
 
 class TabContainer extends StatefulWidget {
   TabContainer({Key key}) : super(key: key);
@@ -40,47 +40,47 @@ class _TabNavigatorState extends State<TabContainer> {
     _tabTitles = ["首页", "导航", "加油", "付款", "我的"];
     _tabImages = [
       [
-        const LoadAssetImage('tab/tab_home_off', width: 25.0,),
-        const LoadAssetImage('tab/tab_home_on', width: 25.0,),
+        YAssetImage(name: ImageUtils.getImgPath('tab/tab_home_off'), width: 25.0,),
+        YAssetImage(name: ImageUtils.getImgPath('tab/tab_home_on'), width: 25.0,),
       ],
       [
-        const LoadAssetImage('tab/tab_nav_off', width: 25.0,),
-        const LoadAssetImage('tab/tab_nav_on', width: 25.0,),
+        YAssetImage(name: ImageUtils.getImgPath('tab/tab_nav_off'), width: 25.0,),
+        YAssetImage(name: ImageUtils.getImgPath('tab/tab_nav_on'), width: 25.0,),
       ],
       [
-        const LoadAssetImage('tab/tab_gas_off', width: 25.0,),
-        const LoadAssetImage('tab/tab_gas_on', width: 25.0,),
+        YAssetImage(name: ImageUtils.getImgPath('tab/tab_gas_off'), width: 25.0,),
+        YAssetImage(name: ImageUtils.getImgPath('tab/tab_gas_on'), width: 25.0,),
       ],
       [
-        const LoadAssetImage('tab/tab_pay_off', width: 25.0,),
-        const LoadAssetImage('tab/tab_pay_on', width: 25.0,),
+        YAssetImage(name: ImageUtils.getImgPath('tab/tab_pay_off'), width: 25.0,),
+        YAssetImage(name: ImageUtils.getImgPath('tab/tab_pay_on'), width: 25.0,),
       ],
       [
-        const LoadAssetImage('tab/tab_mine_off', width: 25.0,),
-        const LoadAssetImage('tab/tab_mine_on', width: 25.0,),
+        YAssetImage(name: ImageUtils.getImgPath('tab/tab_mine_off'), width: 25.0,),
+        YAssetImage(name: ImageUtils.getImgPath('tab/tab_mine_on'), width: 25.0,),
       ],
     ];
     // TODO: 替换Dark tab图标
     _tabDarkImages = [
       [
-        const LoadAssetImage('tab/tab_home_off', width: 25.0,),
-        const LoadAssetImage('tab/tab_home_on', width: 25.0,),
+        YAssetImage(name: ImageUtils.getImgPath('tab/tab_home_off'), width: 25.0,),
+        YAssetImage(name: ImageUtils.getImgPath('tab/tab_home_on'), width: 25.0,),
       ],
       [
-        const LoadAssetImage('tab/tab_nav_off', width: 25.0,),
-        const LoadAssetImage('tab/tab_nav_on', width: 25.0,),
+        YAssetImage(name: ImageUtils.getImgPath('tab/tab_nav_off'), width: 25.0,),
+        YAssetImage(name: ImageUtils.getImgPath('tab/tab_nav_on'), width: 25.0,),
       ],
       [
-        const LoadAssetImage('tab/tab_gas_off', width: 25.0,),
-        const LoadAssetImage('tab/tab_gas_on', width: 25.0,),
+        YAssetImage(name: ImageUtils.getImgPath('tab/tab_gas_off'), width: 25.0,),
+        YAssetImage(name: ImageUtils.getImgPath('tab/tab_gas_on'), width: 25.0,),
       ],
       [
-        const LoadAssetImage('tab/tab_pay_off', width: 25.0,),
-        const LoadAssetImage('tab/tab_pay_on', width: 25.0,),
+        YAssetImage(name: ImageUtils.getImgPath('tab/tab_pay_off'), width: 25.0,),
+        YAssetImage(name: ImageUtils.getImgPath('tab/tab_pay_on'), width: 25.0,),
       ],
       [
-        const LoadAssetImage('tab/tab_mine_off', width: 25.0,),
-        const LoadAssetImage('tab/tab_mine_on', width: 25.0,),
+        YAssetImage(name: ImageUtils.getImgPath('tab/tab_mine_off'), width: 25.0,),
+        YAssetImage(name: ImageUtils.getImgPath('tab/tab_mine_on'), width: 25.0,),
       ],
     ]; 
   }

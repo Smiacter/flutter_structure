@@ -1,7 +1,7 @@
 import 'package:esite/base/structure/mvvm/base_widget.dart';
 import 'package:esite/base/structure/mvvm/view_state_widget.dart';
 import 'package:esite/base/widget/action_sheet.dart';
-import 'package:esite/base/widget/load_image.dart';
+import 'package:esite/base/widget/y_image.dart';
 import 'package:esite/common/select_province.dart';
 import 'package:esite/module/home/home_banner_model.dart';
 import 'package:flutter/cupertino.dart';
@@ -70,7 +70,7 @@ class HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin {
             margin: EdgeInsets.symmetric(horizontal: 15),
             width: double.infinity,
             height: 200,
-            child: LoadImage(model.banners[index].imagePath),
+            child: YImage(image: model.banners[index].imagePath),
           ),
           onTap: () => ActionSheet.show(context: context, type: ActionSheetType.flat, actions: [
             CupertinoActionSheetAction( 

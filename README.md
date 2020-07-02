@@ -18,12 +18,14 @@
 ## TODO
 
 - [ ] 网络封装与MVVM的结合在错误处理上存在问题，待优化
-- [ ] 基础架构代码（不随项目而变）和可配置项的完全分离
+- [ ] 基础架构代码（不随项目而变）和可配置项的完全分离[ 含各种本地资源如图片配置]
 - [ ] 路由管理
+- [x] 屏幕适配[基于flustars中的ScreenUtil]
 - [ ] 常用控件封装
   - [x] Toast和Alert
   - [x] ActionSheet
-  - [ ] 方便使用的Button封装[基于FButton](https://github.com/Fliggy-Mobile/fbutton)
+  - [x] 方便使用的Button封装[基于FButton](https://github.com/Fliggy-Mobile/fbutton)
+  - [x] 方便使用的Image控件封装，圆角，网络，本地图片，添加点击事件
 - [ ] 使用[flui](flui)等UI框架(插件)？
 - [ ] refresh刷新换成[frefresh](https://github.com/Fliggy-Mobile/frefresh)
 - [ ] ...

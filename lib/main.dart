@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:esite/base/structure/tab/tab_container.dart';
 import 'package:esite/base/appearance/theme_provider.dart';
 import 'package:esite/base/util/log_util.dart';
+import 'package:flustars/flustars.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -9,7 +10,12 @@ import 'package:oktoast/oktoast.dart';
 import 'package:provider/provider.dart';
 
 void main() {
+  // 开启开发模式日志打印
   Log.init();
+  // 根据设计图设置屏幕适配的基准，参数依次为宽度、高度、密度
+  // 此处标准为iPhone6/7/8，即750*1334，将密度设置为2相乘刚好合适[//TODO: 调整为可配置]
+  setDesignWHD(375, 667, density: 2);
+
   runApp(MyApp());
 
   // 安卓 - 透明状态栏
