@@ -50,6 +50,8 @@ dependencies:
   shimmer: ^1.1.1
   # 显示网络图片并缓存
   cached_network_image: ^2.2.0+1
+  # 图片选择[多图]
+  multi_image_picker: ^4.6.5
   # 城市地区选择
   azlistview: ^0.1.2
   lpinyin: ^1.0.9

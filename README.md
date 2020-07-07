@@ -25,8 +25,10 @@
   - [x] Toast和Alert
   - [x] ActionSheet
   - [x] 方便使用的Button封装[基于FButton](https://github.com/Fliggy-Mobile/fbutton)
-  - [x] 方便使用的Image控件封装，圆角，网络，本地图片，添加点击事件
-- [ ] 使用[flui](flui)等UI框架(插件)？
+  - [x] 方便使用的Image控件封装，圆角，网络，本地图片，Uint8List格式，配合[multi_image_picker]**选中的**[Asset]类型，添加点击事件【细节：可增加自带Image显示的过渡动画，当前会有一点突兀，Uint8List显示会先白一下再显示出图片】
+  - [x] 多图选择，基于[multi_image_picker](https://pub.dev/packages/multi_image_picker)
+- [ ] 主题模式可配置，配置只支持light
+- [x] 使用[flui](flui)等UI框架(插件)？【使用了flui、FButton】
 - [ ] refresh刷新换成[frefresh](https://github.com/Fliggy-Mobile/frefresh)
 - [ ] ...
 

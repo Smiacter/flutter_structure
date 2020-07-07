@@ -48,13 +48,13 @@ class ViewStateErrorWidget extends StatelessWidget {
       case ViewStateErrorType.network:
         defaultImage = Transform.translate(
           offset: Offset(-50, 0),
-          child: YAssetImage(name: ImageUtils.getImgPath("common/network_error"), width: 100, height: 100,),
+          child: YAssetImage(src: ImageUtils.getImgPath("common/network_error"), width: 100, height: 100,),
         );
         defaultTitle = "网络连接异常,请检查网络或稍后重试";
         // errorMessage = ''; // 网络异常移除message提示
         break;
       case ViewStateErrorType.unknown:
-        defaultImage = YAssetImage(name: ImageUtils.getImgPath("common/page_error"), width: 100, height: 100,);
+        defaultImage = YAssetImage(src: ImageUtils.getImgPath("common/page_error"), width: 100, height: 100,);
         defaultTitle = "加载失败";
         break;
 
@@ -97,7 +97,7 @@ class ViewStateEmptyWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ViewStateWidget(
       onPressed: this.onPressed,
-      image: image ?? YAssetImage(name: ImageUtils.getImgPath("common/page_empty")),
+      image: image ?? YAssetImage(src: ImageUtils.getImgPath("common/page_empty")),
       title: message ?? "空空如也",
       buttonText: buttonText,
       buttonTextData: "刷新一下",
@@ -138,7 +138,7 @@ class ViewStateUnAuthImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Hero(
       tag: 'loginLogo',
-      child: YAssetImage(name: ImageUtils.getImgPath("common/default_avatar"), width: 100, height: 100,),
+      child: YAssetImage(src: ImageUtils.getImgPath("common/default_avatar"), width: 100, height: 100,),
     );
   }
 }
@@ -172,7 +172,7 @@ class ViewStateWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
-        image ?? YAssetImage(name: ImageUtils.getImgPath("common/page_error"), width: 100, height: 100,),
+        image ?? YAssetImage(src: ImageUtils.getImgPath("common/page_error"), width: 100, height: 100,),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
           child: Column(

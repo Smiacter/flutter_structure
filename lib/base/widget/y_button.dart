@@ -7,8 +7,6 @@ import 'package:flutter/material.dart';
 
 ///基于[FButton https://github.com/Fliggy-Mobile/fbutton]封装常用的Button类型
 ///若无法满足条件或者需要组合的，可手动使用FButton进行设置
-
-/// 常规FlatButton，无任何装饰
 class YButton extends StatelessWidget {
   /// 文字内容
   final String text;
@@ -57,7 +55,7 @@ class YButton extends StatelessWidget {
     this.padding = const EdgeInsets.all(10),
     this.bgColor,
     this.shadowColor,
-    this.shadowBlur,
+    this.shadowBlur = 1.0,
     this.disableTextColor,
     this.disableBgColor,
     this.corner,

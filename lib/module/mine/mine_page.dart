@@ -1,14 +1,24 @@
+import 'dart:typed_data';
+
 import 'package:esite/base/appearance/gaps.dart';
 import 'package:esite/base/widget/hud.dart';
+import 'package:esite/base/widget/image_picker.dart';
 import 'package:esite/base/widget/y_button.dart';
 import 'package:esite/base/widget/y_image.dart';
 import 'package:flutter/material.dart';
 import 'package:esite/base/extension/double_ex.dart';
 
 /// tab - 我的
-class MinePage extends StatelessWidget {
+class MinePage extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() => _MinePageState();
+}
+class _MinePageState extends State<MinePage> with AutomaticKeepAliveClientMixin {
+  Asset _asset;
+
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return Container( 
       color: Colors.white,
       child: Column(
@@ -19,7 +29,7 @@ class MinePage extends StatelessWidget {
             text: "普通按钮",
             width: 150,
             height: 50,
-            // bgColor: Colors.blue,
+            bgColor: Colors.blue,
             corner: FButtonCorner(leftBottomCorner: 30, rightTopCorner: 30),
             borderWidth: 0.5,
             borderColor: Colors.black,
@@ -53,16 +63,34 @@ class MinePage extends StatelessWidget {
           ),
           Gaps.vGap10,
           YImage(
-            image: "https://images.unsplash.com/photo-1593642532400-2682810df593?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80", 
+            src: "https://www.wanandroid.com/blogimgs/62c1bd68-b5f3-4a3c-a649-7ca8c7dfabe6.png", 
             // cornerRadius: 0,
             width: 100.ypx,
             height: 100.ypx,
+            cornerRadius: 8,
             onPressed: () => Hud.showToast(text: "点击图片"),
           ),
           Gaps.vGap10,
-          YImage(image: ImageUtils.getImgPath("common/page_empty"), width: 150.ypx, height: 150.ypx)
+          YButton(text: "多选照片", width: 100, height: 100, onPressed: () => _pickImages() ),
+          Gaps.vGap10,
+          if (_asset != null)
+            YImage(asset: _asset, width: 110, height: 110, cornerRadius: 60,)
         ],
       ),
     );
   }
+
+  _pickImages() async {
+    var assets = await ImagePicker.showImagePicker(maxCount: 1);
+    if (assets == null || assets.length == 0) {
+      return;
+    }
+
+    setState(() {
+      _asset = assets.length > 0 ? assets[0] : null;
+    });
+  }
+
+  @override
+  bool get wantKeepAlive => true;
 }

@@ -70,7 +70,7 @@ class HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin {
             margin: EdgeInsets.symmetric(horizontal: 15),
             width: double.infinity,
             height: 200,
-            child: YImage(image: model.banners[index].imagePath),
+            child: YImage(src: model.banners[index].imagePath),
           ),
           onTap: () => ActionSheet.show(context: context, type: ActionSheetType.flat, actions: [
             CupertinoActionSheetAction( 

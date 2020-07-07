@@ -40,47 +40,47 @@ class _TabNavigatorState extends State<TabContainer> {
     _tabTitles = ["首页", "导航", "加油", "付款", "我的"];
     _tabImages = [
       [
-        YAssetImage(name: ImageUtils.getImgPath('tab/tab_home_off'), width: 25.0,),
-        YAssetImage(name: ImageUtils.getImgPath('tab/tab_home_on'), width: 25.0,),
+        YAssetImage(src: ImageUtils.getImgPath('tab/tab_home_off'), width: 25.0,),
+        YAssetImage(src: ImageUtils.getImgPath('tab/tab_home_on'), width: 25.0,),
       ],
       [
-        YAssetImage(name: ImageUtils.getImgPath('tab/tab_nav_off'), width: 25.0,),
-        YAssetImage(name: ImageUtils.getImgPath('tab/tab_nav_on'), width: 25.0,),
+        YAssetImage(src: ImageUtils.getImgPath('tab/tab_nav_off'), width: 25.0,),
+        YAssetImage(src: ImageUtils.getImgPath('tab/tab_nav_on'), width: 25.0,),
       ],
       [
-        YAssetImage(name: ImageUtils.getImgPath('tab/tab_gas_off'), width: 25.0,),
-        YAssetImage(name: ImageUtils.getImgPath('tab/tab_gas_on'), width: 25.0,),
+        YAssetImage(src: ImageUtils.getImgPath('tab/tab_gas_off'), width: 25.0,),
+        YAssetImage(src: ImageUtils.getImgPath('tab/tab_gas_on'), width: 25.0,),
       ],
       [
-        YAssetImage(name: ImageUtils.getImgPath('tab/tab_pay_off'), width: 25.0,),
-        YAssetImage(name: ImageUtils.getImgPath('tab/tab_pay_on'), width: 25.0,),
+        YAssetImage(src: ImageUtils.getImgPath('tab/tab_pay_off'), width: 25.0,),
+        YAssetImage(src: ImageUtils.getImgPath('tab/tab_pay_on'), width: 25.0,),
       ],
       [
-        YAssetImage(name: ImageUtils.getImgPath('tab/tab_mine_off'), width: 25.0,),
-        YAssetImage(name: ImageUtils.getImgPath('tab/tab_mine_on'), width: 25.0,),
+        YAssetImage(src: ImageUtils.getImgPath('tab/tab_mine_off'), width: 25.0,),
+        YAssetImage(src: ImageUtils.getImgPath('tab/tab_mine_on'), width: 25.0,),
       ],
     ];
     // TODO: 替换Dark tab图标
     _tabDarkImages = [
       [
-        YAssetImage(name: ImageUtils.getImgPath('tab/tab_home_off'), width: 25.0,),
-        YAssetImage(name: ImageUtils.getImgPath('tab/tab_home_on'), width: 25.0,),
+        YAssetImage(src: ImageUtils.getImgPath('tab/tab_home_off'), width: 25.0,),
+        YAssetImage(src: ImageUtils.getImgPath('tab/tab_home_on'), width: 25.0,),
       ],
       [
-        YAssetImage(name: ImageUtils.getImgPath('tab/tab_nav_off'), width: 25.0,),
-        YAssetImage(name: ImageUtils.getImgPath('tab/tab_nav_on'), width: 25.0,),
+        YAssetImage(src: ImageUtils.getImgPath('tab/tab_nav_off'), width: 25.0,),
+        YAssetImage(src: ImageUtils.getImgPath('tab/tab_nav_on'), width: 25.0,),
       ],
       [
-        YAssetImage(name: ImageUtils.getImgPath('tab/tab_gas_off'), width: 25.0,),
-        YAssetImage(name: ImageUtils.getImgPath('tab/tab_gas_on'), width: 25.0,),
+        YAssetImage(src: ImageUtils.getImgPath('tab/tab_gas_off'), width: 25.0,),
+        YAssetImage(src: ImageUtils.getImgPath('tab/tab_gas_on'), width: 25.0,),
       ],
       [
-        YAssetImage(name: ImageUtils.getImgPath('tab/tab_pay_off'), width: 25.0,),
-        YAssetImage(name: ImageUtils.getImgPath('tab/tab_pay_on'), width: 25.0,),
+        YAssetImage(src: ImageUtils.getImgPath('tab/tab_pay_off'), width: 25.0,),
+        YAssetImage(src: ImageUtils.getImgPath('tab/tab_pay_on'), width: 25.0,),
       ],
       [
-        YAssetImage(name: ImageUtils.getImgPath('tab/tab_mine_off'), width: 25.0,),
-        YAssetImage(name: ImageUtils.getImgPath('tab/tab_mine_on'), width: 25.0,),
+        YAssetImage(src: ImageUtils.getImgPath('tab/tab_mine_off'), width: 25.0,),
+        YAssetImage(src: ImageUtils.getImgPath('tab/tab_mine_on'), width: 25.0,),
       ],
     ]; 
   }

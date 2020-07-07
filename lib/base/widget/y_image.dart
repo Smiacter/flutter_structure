@@ -1,15 +1,22 @@
+export 'package:multi_image_picker/multi_image_picker.dart';
+import 'dart:typed_data';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:common_utils/common_utils.dart';
 import 'package:flutter/material.dart';
+import 'package:multi_image_picker/multi_image_picker.dart';
 
-/// 图片加载（支持本地与网络图片）
-/// 
+/// 图片加载（支持本地路径、网络图片、Uint8List、Asset格式）
+/// 判断顺序依次为[本地路径||网络图片(String类型)]->[Uint8List]->[Asset]，确保只传一种类型
 /// 支持圆角设置
 /// 支持网络图片的Placeholder、加载错误的默认样式
 class YImage extends StatelessWidget {
-  /// 图片资源，可以是网络url或本地资源路径
-  final String image;
-  /// placeholder样式，在NetworkImage中有效
+  /// 图片资源，可以是[网络url]或[完整本地资源路径]
+  final String src;
+  /// 二进制资源图片[Uint8List]
+  final Uint8List bytes;
+  /// [multi_image_picker]选中的[Asset]类型
+  final Asset asset;
+  /// placeholder样式，在NetworkImage和Asset类型中有效
   final Widget placeholder;
   /// 宽度
   final double width;
@@ -27,7 +34,9 @@ class YImage extends StatelessWidget {
   
   const YImage({
     Key key,
-    @required this.image,
+    this.src,
+    this.bytes,
+    this.asset,
     this.placeholder,
     this.width, 
     this.height,
@@ -42,7 +51,7 @@ class YImage extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    if (TextUtil.isEmpty(image) || image == 'null') {
+    if (TextUtil.isEmpty(src) && null == bytes && null == asset) {
       return _ErrorWidget(width, height, errorWidget);
     } else {
       return InkWell(  
@@ -56,10 +65,11 @@ class YImage extends StatelessWidget {
   }
 
   Widget _image() {
-    if (image.startsWith('http')) {
+    if (src != null) {
+      if (src.startsWith('http')) {
         return YNetworkImage( 
           key: key,
-          imgUrl: image,
+          src: src,
           placeholder: placeholder,
           width: width,
           height: height,
@@ -67,10 +77,10 @@ class YImage extends StatelessWidget {
           errorWidget: errorWidget,
           color: color,
         );
-      } else {
+    } else {
         return YAssetImage( 
           key: key,
-          name: image,
+          src: src,
           width: width,
           height: height,
           fit: fit,
@@ -78,13 +88,33 @@ class YImage extends StatelessWidget {
           color: color,
         );
       }
+    } else if (bytes != null) {
+      return YMemoryImage( 
+        key: key,
+        bytes: bytes,
+        width: width,
+        height: height,
+        fit: fit,
+        errorWidget: errorWidget,
+      );
+    } else { // asset必定不为null
+      return YMultiAssetImage( 
+        key: key == null ? Key(asset.identifier) : key, // key默认使用asset.identifier[因为使用了Stateful，保证更换Asset会刷新，必须传标识Key]
+        asset: asset,
+        width: width,
+        height: height,
+        fit: fit,
+        errorWidget: errorWidget,
+        placeholder: placeholder,
+      );
+    }
   }
 }
 
 /// 加载本地资源图片
 class YAssetImage extends StatelessWidget {
   /// 资源路径名，一般为['assets/images/category/xxx.png']
-  final String name;
+  final String src;
   final double width;
   final double height;
   final BoxFit fit;
@@ -93,7 +123,7 @@ class YAssetImage extends StatelessWidget {
   
   const YAssetImage({
     Key key,
-    @required this.name,
+    @required this.src,
     this.width,
     this.height, 
     this.fit = BoxFit.cover,
@@ -103,9 +133,8 @@ class YAssetImage extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-
     return Image.asset(
-      name,
+      src,
       height: height,
       width: width,
       fit: fit,
@@ -122,7 +151,7 @@ class YAssetImage extends StatelessWidget {
 /// 
 class YNetworkImage extends StatelessWidget {
   /// 图片网络地址
-  final String imgUrl;
+  final String src;
   final Widget placeholder;
   final double width;
   final double height;
@@ -132,7 +161,7 @@ class YNetworkImage extends StatelessWidget {
 
   YNetworkImage({
     Key key,
-    @required this.imgUrl,
+    @required this.src,
     this.placeholder,
     this.width,
     this.height,
@@ -144,7 +173,7 @@ class YNetworkImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CachedNetworkImage( 
-      imageUrl: imgUrl,
+      imageUrl: src,
       placeholder: (context, url) => _PlaceholderWidget(width, height, placeholder),
       width: width,
       height: height,
@@ -152,6 +181,87 @@ class YNetworkImage extends StatelessWidget {
       errorWidget: (context, url, error) => _ErrorWidget(width, height, errorWidget),
       color: color,
     );
+  }
+}
+
+/// 加载二进制资源图片[Uint8List]
+class YMemoryImage extends StatelessWidget {
+  /// 图片资源数据
+  final Uint8List bytes;
+  final double width;
+  final double height;
+  final BoxFit fit;
+  final Color color;
+  final Widget errorWidget;
+  
+  const YMemoryImage({
+    Key key,
+    @required this.bytes,
+    this.width,
+    this.height, 
+    this.fit = BoxFit.cover,
+    this.color,
+    this.errorWidget,
+  }): super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Image.memory(
+      bytes,
+      width: width,
+      height: height,
+      fit: fit,
+      color: color,
+      errorBuilder: (context, error, stackTrace) => _ErrorWidget(width, height, errorWidget),
+    );
+  }
+}
+
+/// 显示[multi_image_picker]选中的[Asset]资源
+/// 记得使用时传入唯一标识Key[因为是Stateful，传入Key确保能刷新，在YImage调用时已默认传入了asset.identifier]
+class YMultiAssetImage extends StatefulWidget {
+  /// 图片资源数据
+  final Asset asset;
+  final double width;
+  final double height;
+  final BoxFit fit;
+  final Color color;
+  final Widget placeholder;
+  final Widget errorWidget;
+
+  const YMultiAssetImage({
+    Key key,
+    @required this.asset,
+    this.width,
+    this.height, 
+    this.fit = BoxFit.cover,
+    this.color,
+    this.placeholder,
+    this.errorWidget,
+  }): super(key: key);
+
+  @override
+  State<StatefulWidget> createState() => _YMultiAssetImageState();
+}
+class _YMultiAssetImageState extends State<YMultiAssetImage> {
+  Uint8List _bytes;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _getImgBytes();
+  }
+  @override
+  Widget build(BuildContext context) {
+    return _bytes == null 
+    ? _PlaceholderWidget(widget.width, widget.height, widget.placeholder) : 
+      YMemoryImage(bytes: _bytes, width: widget.width, height: widget.height, fit: widget.fit, color: widget.color, errorWidget: widget.errorWidget,);
+  }
+
+  void _getImgBytes() async {
+    _bytes = await ImageUtils.getImgBytes(widget.asset);
+    setState(() {});
   }
 }
 
@@ -210,13 +320,21 @@ class _PlaceholderWidget extends StatelessWidget {
 }
 
 class ImageUtils {
+
+  /// 获取指定图片资源名和类型的可显示路径
+  static String getImgPath(String name, {String format: 'png'}) {
+    return 'assets/images/$name.$format';
+  }
+
+  /// 将[multi_image_picker]得到的[Asset]转化为[Uint8List]
+  /// 方便直接使用[Image.memory]显示
+  static Future<Uint8List> getImgBytes(Asset asset) async {
+    ByteData byteData = await asset.getByteData();
+    return byteData.buffer.asUint8List();
+  }
   
   static ImageProvider getAssetImage(String name, {String format: 'png'}) {
     return AssetImage(getImgPath(name, format: format));
-  }
-
-  static String getImgPath(String name, {String format: 'png'}) {
-    return 'assets/images/$name.$format';
   }
 
   static ImageProvider getImageProvider(String imageUrl, {String holderImg: 'none'}) {
