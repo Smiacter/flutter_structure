@@ -1,5 +1,6 @@
 import 'package:esite/base/widget/y_image.dart';
 import 'package:flutter/material.dart';
+import 'package:smart_flare/smart_flare.dart';
 import 'view_state.dart';
 
 /// 定义除了正常情况下不同页面状态的不同显示Widget
@@ -13,7 +14,14 @@ import 'view_state.dart';
 class ViewStateLoadingWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Center(child: CircularProgressIndicator());
+    return Center(
+      child: SmartFlareActor( 
+        width: 100,
+        height: 100,
+        filename: "assets/flrs/loading_colorful.flr",
+        startingAnimation: "active",
+      )//CircularProgressIndicator()
+    );
   }
 }
 
@@ -46,10 +54,12 @@ class ViewStateErrorWidget extends StatelessWidget {
     String defaultTextData = "重试";
     switch (error.errorType) {
       case ViewStateErrorType.network:
-        defaultImage = Transform.translate(
-          offset: Offset(-50, 0),
-          child: YAssetImage(src: ImageUtils.getImgPath("common/network_error"), width: 100, height: 100,),
-        );
+        defaultImage = SmartFlareActor(  
+          width: 130,
+          height: 130,
+          filename: "assets/flrs/no_connection.flr",
+          startingAnimation: "no_connection",
+      );//YAssetImage(src: ImageUtils.getImgPath("common/network_error"), width: 100, height: 100,);
         defaultTitle = "网络连接异常,请检查网络或稍后重试";
         // errorMessage = ''; // 网络异常移除message提示
         break;

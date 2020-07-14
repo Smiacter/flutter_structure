@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 /// 定义App所需颜色
 /// 为了适配dark mode，需要配置light和dark两种色调
 class AppColor {
-  static const Color app_main = Color(0xFFf37121);
-  static const Color dark_app_main = Color(0xFFfeceab);
+  static const Color app_main = Color(0xFF1BD38F);
+  static const Color dark_app_main = Color(0xFF64D38F);
 
   static const Color bg_color = Color(0xfff1f1f1);
   static const Color dark_bg_color = Color(0xFF18191A);

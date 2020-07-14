@@ -73,8 +73,13 @@ class _MinePageState extends State<MinePage> with AutomaticKeepAliveClientMixin 
           Gaps.vGap10,
           YButton(text: "多选照片", width: 100, height: 100, onPressed: () => _pickImages() ),
           Gaps.vGap10,
-          if (_asset != null)
-            YImage(asset: _asset, width: 110, height: 110, cornerRadius: 60,)
+          AnimatedOpacity( 
+            duration: Duration(milliseconds: 500),
+            opacity: _asset == null ? 0 : 1,
+            child: YImage(asset: _asset, width: 110, height: 110, cornerRadius: 60,),
+          ),
+          // if (_asset != null)
+          //   YImage(asset: _asset, width: 110, height: 110, cornerRadius: 60,)
         ],
       ),
     );

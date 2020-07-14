@@ -55,6 +55,9 @@ dependencies:
   # 城市地区选择
   azlistview: ^0.1.2
   lpinyin: ^1.0.9
+  # Flare动画，对应Flare网站：https://rive.app/explore/popular/trending/all
+  flare_flutter: ^2.0.5
+  smart_flare: ^0.2.9+1
 
 dev_dependencies:
   flutter_test:
@@ -93,6 +96,8 @@ flutter:
     - assets/images/3.0x/mine/
 
     - assets/data/china.json
+
+    - assets/flrs/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
