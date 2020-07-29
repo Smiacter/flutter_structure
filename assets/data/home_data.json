@@ -1,0 +1,314 @@
+{
+  "banners": [
+    {
+      "redirectUrl": "北京市",
+      "imageUrl":"https://www.freevector.com/uploads/vector/preview/30915/HEALTHY_FOOD.jpg"
+    },
+    {
+      "redirectUrl": "北京市",
+      "imageUrl":"https://www.freevector.com/uploads/vector/preview/30931/EAT_MORE_PROTEIN.jpg"
+    },
+    {
+      "redirectUrl": "北京市",
+      "imageUrl":"https://www.freevector.com/uploads/vector/preview/30890/EAT_HEALTHY_FOOD.jpg"
+    }
+  ],
+  "menus": [
+    {
+      "image": "https://img.icons8.com/dusk/64/000000/online.png",		
+      "describe": "加油卡充值"
+    },
+    {
+      "image": "https://img.icons8.com/dusk/64/000000/online.png",		
+      "describe": "加油卡查询"
+    },
+    {
+      "image": "https://img.icons8.com/dusk/64/000000/online.png",		
+      "describe": "我的电子券"
+    },
+    {
+      "image": "https://img.icons8.com/dusk/64/000000/online.png",		
+      "describe": "油站导航"
+    },
+    {
+      "image": "https://img.icons8.com/dusk/64/000000/online.png",		
+      "describe": "积分商城"
+    },
+    {
+      "image": "https://img.icons8.com/dusk/64/000000/online.png",		
+      "describe": "在线办卡"
+    },
+    {
+      "image": "https://img.icons8.com/dusk/64/000000/online.png",		
+      "describe": "我的订单"
+    },
+    {
+      "image": "https://img.icons8.com/dusk/64/000000/online.png",		
+      "describe": "加油卡查询"
+    }
+  ],
+  "type": "xinjiang_type",
+  "default_type": {
+    "type": {
+      "title": "https://www.freevector.com/uploads/vector/preview/30886/DRINK_MORE_WATER.jpg",
+      "items": [
+        {
+          "image": "https://www.freevector.com/uploads/vector/preview/30931/EAT_MORE_PROTEIN.jpg",		
+          "describe": "中国石油自有商品"	
+        },
+        {
+          "image": "https://www.freevector.com/uploads/vector/preview/30915/HEALTHY_FOOD.jpg",		
+          "describe": "特色商品"
+        },
+        {
+          "image": "https://img.icons8.com/dusk/64/000000/ios-photos.png",		
+          "describe": "大礼包"
+        },
+        {
+          "image": "https://img.icons8.com/dusk/64/000000/ios-photos.png",		
+          "describe": "热销商品"
+        },
+        {
+          "image": "https://img.icons8.com/dusk/64/000000/ios-photos.png",		
+          "describe": "混合支付"
+        },
+        {
+          "image": "https://img.icons8.com/dusk/64/000000/ios-photos.png",		
+          "describe": "公益捐赠"
+        }
+      ]
+    },
+    "goods": {
+      "title": "https://www.freevector.com/uploads/vector/preview/30886/DRINK_MORE_WATER.jpg",
+      "items": [
+        {
+          "image": "https://www.freevector.com/uploads/vector/preview/11768/FreeVector-Orange-Vector-Card.jpg",		
+          "describe": "中国石油5元电子充值卡",
+          "price": "900积分", 	
+          "soldNum": "120",	
+          "redirectUrl": "https://www.baidu.com"
+        },
+        {
+          "image": "https://www.freevector.com/uploads/vector/preview/11768/FreeVector-Orange-Vector-Card.jpg",		
+          "describe": "中国石油5元电子充值卡",
+          "price": "900积分", 	
+          "soldNum": "120",	
+          "redirectUrl": "https://www.baidu.com"
+        },
+        {
+          "image": "https://www.freevector.com/uploads/vector/preview/11768/FreeVector-Orange-Vector-Card.jpg",		
+          "describe": "中国石油5元电子充值卡",
+          "price": "900积分", 	
+          "soldNum": "120",	
+          "redirectUrl": "https://www.baidu.com"
+        },
+        {
+          "image": "https://www.freevector.com/uploads/vector/preview/11768/FreeVector-Orange-Vector-Card.jpg",		
+          "describe": "中国石油5元电子充值卡",
+          "price": "900积分", 	
+          "soldNum": "120",	
+          "redirectUrl": "https://www.baidu.com"
+        }
+      ]
+    }
+  },
+  "sichuan_type": {
+    "ad": {
+      "image": "https://www.freevector.com/uploads/vector/preview/30886/DRINK_MORE_WATER.jpg",
+      "height": 60
+    },
+    "title": "热门好货全搜罗，快来看看吧",
+    "items": [
+      {
+        "image": "https://www.freevector.com/uploads/vector/preview/11768/FreeVector-Orange-Vector-Card.jpg",		
+        "describe": "中国石油5元电子充值卡",
+        "price": "￥150", 	
+        "soldNum": "120",	
+        "redirectUrl": "https://www.baidu.com",
+        "originalPrice": "￥180"
+      },
+      {
+        "image": "https://www.freevector.com/uploads/vector/preview/11768/FreeVector-Orange-Vector-Card.jpg",		
+        "describe": "中国石油5元电子充值卡",
+        "price": "900积分", 	
+        "soldNum": "￥150",	
+        "redirectUrl": "https://www.baidu.com",
+        "originalPrice": "￥180"
+      },
+      {
+        "image": "https://www.freevector.com/uploads/vector/preview/11768/FreeVector-Orange-Vector-Card.jpg",		
+        "describe": "中国石油5元电子充值卡",
+        "price": "￥150", 	
+        "soldNum": "120",	
+        "redirectUrl": "https://www.baidu.com",
+        "originalPrice": "￥180"
+      },
+      {
+        "image": "https://www.freevector.com/uploads/vector/preview/11768/FreeVector-Orange-Vector-Card.jpg",		
+        "describe": "中国石油5元电子充值卡",
+        "price": "￥150", 	
+        "soldNum": "120",	
+        "redirectUrl": "https://www.baidu.com",
+        "originalPrice": "￥180"
+      }
+    ]
+  },
+  "chongqing_type": {
+    "ad": {
+      "image": "https://www.freevector.com/uploads/vector/preview/30886/DRINK_MORE_WATER.jpg",
+      "height": 60
+    },
+    "sections": [
+      {
+        "title": "人气活动",
+        "items": [
+          {
+            "image": "https://www.freevector.com/uploads/vector/preview/30890/EAT_HEALTHY_FOOD.jpg",
+            "redirectUrl": "https://www.baidu.com"
+          },
+          {
+            "image": "https://www.freevector.com/uploads/vector/preview/30890/EAT_HEALTHY_FOOD.jpg",
+            "redirectUrl": "https://www.baidu.com"
+          },
+          {
+            "image": "https://www.freevector.com/uploads/vector/preview/30890/EAT_HEALTHY_FOOD.jpg",
+            "redirectUrl": "https://www.baidu.com"
+          },
+          {
+            "image": "https://www.freevector.com/uploads/vector/preview/30890/EAT_HEALTHY_FOOD.jpg",
+            "redirectUrl": "https://www.baidu.com"
+          }
+        ]
+      },
+      {
+        "title": "会员福利",
+        "items": [
+          {
+            "image": "https://www.freevector.com/uploads/vector/preview/30890/EAT_HEALTHY_FOOD.jpg",
+            "redirectUrl": "https://www.baidu.com"
+          },
+          {
+            "image": "https://www.freevector.com/uploads/vector/preview/30890/EAT_HEALTHY_FOOD.jpg",
+            "redirectUrl": "https://www.baidu.com"
+          },
+          {
+            "image": "https://www.freevector.com/uploads/vector/preview/30890/EAT_HEALTHY_FOOD.jpg",
+            "redirectUrl": "https://www.baidu.com"
+          }
+        ]
+      },
+      {
+        "title": "好客重庆",
+        "items": [
+          {
+            "image": "https://www.freevector.com/uploads/vector/preview/30890/EAT_HEALTHY_FOOD.jpg",
+            "redirectUrl": "https://www.baidu.com"
+          },
+          {
+            "image": "https://www.freevector.com/uploads/vector/preview/30890/EAT_HEALTHY_FOOD.jpg",
+            "redirectUrl": "https://www.baidu.com"
+          },
+          {
+            "image": "https://www.freevector.com/uploads/vector/preview/30890/EAT_HEALTHY_FOOD.jpg",
+            "redirectUrl": "https://www.baidu.com"
+          },
+          {
+            "image": "https://www.freevector.com/uploads/vector/preview/30890/EAT_HEALTHY_FOOD.jpg",
+            "redirectUrl": "https://www.baidu.com"
+          }
+        ]
+      }
+    ]
+  },
+  "xinjiang_type": {
+    "ad": {
+      "image": "https://www.freevector.com/uploads/vector/preview/30886/DRINK_MORE_WATER.jpg",
+      "height": 100
+    },
+    "title": "https://www.freevector.com/uploads/vector/preview/30886/DRINK_MORE_WATER.jpg",
+    "items": [
+      {
+        "image": "https://www.freevector.com/uploads/vector/preview/30890/EAT_HEALTHY_FOOD.jpg",
+        "redirectUrl": "https://www.baidu.com"
+      },
+      {
+        "image": "https://www.freevector.com/uploads/vector/preview/30890/EAT_HEALTHY_FOOD.jpg",
+        "redirectUrl": "https://www.baidu.com"
+      },
+      {
+        "image": "https://www.freevector.com/uploads/vector/preview/30890/EAT_HEALTHY_FOOD.jpg",
+        "redirectUrl": "https://www.baidu.com"
+      },
+      {
+        "image": "https://www.freevector.com/uploads/vector/preview/30890/EAT_HEALTHY_FOOD.jpg",
+        "redirectUrl": "https://www.baidu.com"
+      }
+    ]
+  },
+  "heilongjiang_type": [
+    {
+      "ad": {
+        "image": "https://www.freevector.com/uploads/vector/preview/30886/DRINK_MORE_WATER.jpg",
+        "height": 100
+      },
+      "items": [
+        {
+          "text": "绑定车牌", 
+          "image": "https://www.freevector.com/uploads/vector/preview/30931/EAT_MORE_PROTEIN.jpg"
+        },
+        {
+          "text": "每日签到", 
+          "image": "https://www.freevector.com/uploads/vector/preview/30931/EAT_MORE_PROTEIN.jpg"
+        },
+        {
+          "text": "分享有礼", 
+          "image": "https://www.freevector.com/uploads/vector/preview/30931/EAT_MORE_PROTEIN.jpg"
+        },
+        {
+          "text": "幸运抽奖", 
+          "image": "https://www.freevector.com/uploads/vector/preview/30931/EAT_MORE_PROTEIN.jpg"
+        },
+        {
+          "text": "网约车", 
+          "image": "https://www.freevector.com/uploads/vector/preview/30931/EAT_MORE_PROTEIN.jpg"
+        },
+        {
+          "text": "鼠光宝气", 
+          "image": "https://www.freevector.com/uploads/vector/preview/30931/EAT_MORE_PROTEIN.jpg"
+        },
+        {
+          "text": "合作福利", 
+          "image": "https://www.freevector.com/uploads/vector/preview/30931/EAT_MORE_PROTEIN.jpg"
+        },
+        {
+          "text": "U币兑换", 
+          "image": "https://www.freevector.com/uploads/vector/preview/30931/EAT_MORE_PROTEIN.jpg"
+        }
+      ]
+    },
+    {
+      "ad": {
+        "image": "https://www.freevector.com/uploads/vector/preview/30886/DRINK_MORE_WATER.jpg",
+        "height": 100
+      },
+      "items": [
+        {
+          "text": "工行", 
+          "image": "https://www.freevector.com/uploads/vector/preview/30931/EAT_MORE_PROTEIN.jpg"
+        },
+        {
+          "text": "一手店", 
+          "image": "https://www.freevector.com/uploads/vector/preview/30931/EAT_MORE_PROTEIN.jpg"
+        },
+        {
+          "text": "咖啡", 
+          "image": "https://www.freevector.com/uploads/vector/preview/30931/EAT_MORE_PROTEIN.jpg"
+        },
+        {
+          "text": "洗车", 
+          "image": "https://www.freevector.com/uploads/vector/preview/30931/EAT_MORE_PROTEIN.jpg"
+        }
+      ]
+    }
+  ]
+}

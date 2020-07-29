@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'package:esite/base/appearance/app_bar.dart';
 import 'package:esite/base/structure/mvvm/view_state_widget.dart';
-import 'package:esite/base/widget/skeleton.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:azlistview/azlistview.dart';

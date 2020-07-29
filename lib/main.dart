@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
 //              checkerboardOffscreenLayers: true, // 检查离屏渲染
                 theme: provider.getTheme(),
                 darkTheme: provider.getTheme(isDarkMode: true),
-                themeMode: provider.getThemeMode(),
+                themeMode: ThemeMode.light, //provider.getThemeMode(), //* 这里强制设置为light。设置provider.getThemeMode()可做主题切换[首次是跟随系统]
                 home: TabContainer(),
                 // onGenerateRoute: Application.router.generator,
                 localizationsDelegates: const [

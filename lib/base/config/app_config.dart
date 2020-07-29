@@ -6,7 +6,7 @@ class AppConfig {
   /// App运行在Release环境时，inProduction为true；当App运行在Debug和Profile环境时，inProduction为false
   static const bool inProduction  = kReleaseMode;
 
-  static const String logTag = "CNPC-LOG";
+  static const String logTag = "DEV-LOG";
 
   static const bool isDriverTest  = false;
   static const bool isUnitTest  = false;

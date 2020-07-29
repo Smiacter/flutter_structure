@@ -58,6 +58,12 @@ dependencies:
   # Flare动画，对应Flare网站：https://rive.app/explore/popular/trending/all
   flare_flutter: ^2.0.5
   smart_flare: ^0.2.9+1
+  # 可配置size的瀑布流
+  flutter_staggered_grid_view: ^0.3.0
+  # Swiper
+  flutter_swiper: ^1.1.6
+  # 画虚线
+  dotted_border: ^1.0.6
 
 dev_dependencies:
   flutter_test:
@@ -96,6 +102,7 @@ flutter:
     - assets/images/3.0x/mine/
 
     - assets/data/china.json
+    - assets/data/home_data.json
 
     - assets/flrs/
 

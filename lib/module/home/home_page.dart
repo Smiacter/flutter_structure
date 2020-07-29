@@ -3,6 +3,7 @@ import 'package:esite/base/structure/mvvm/view_state_widget.dart';
 import 'package:esite/base/widget/action_sheet.dart';
 import 'package:esite/base/widget/y_image.dart';
 import 'package:esite/common/select_province.dart';
+import 'package:esite/module/home/car_keyboard/car_keyboard.dart';
 import 'package:esite/module/home/home_banner_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -27,12 +28,26 @@ class HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin {
       appBar: AppBar(  
         leading: InkWell( 
           child: Center(child: Text("成都")),
-          onTap: () => '',
+          onTap: () => Navigator.of(context).push(CupertinoPageRoute(builder: (context) => SelectProvince(),)),
         ),
         actions: <Widget>[
           FlatButton(  
             child: Text("消息"),
-            onPressed: () => Navigator.of(context).push(CupertinoPageRoute(builder: (context) => SelectProvince(),)),
+            onPressed: () {
+                Navigator.push(
+                context,
+                PageRouteBuilder(
+                  transitionDuration: Duration(milliseconds: 200), //动画时间为500毫秒
+                  pageBuilder: (BuildContext context, Animation animation,
+                      Animation secondaryAnimation) {
+                    return new ScaleTransition(
+                      scale: animation,
+                      child: CarKeyboard(),
+                    );
+                  },
+                ),
+              );
+            }// Navigator.of(context).push(CupertinoPageRoute(builder: (context) => CarKeyboard(),)),
           )
         ],
       ),
